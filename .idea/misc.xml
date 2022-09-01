@@ -5,6 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.2775" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.2775" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.31979166666666664" />
+        <entry key="app/src/main/res/layout/movie_list.xml" value="0.3338541666666667" />
+        <entry key="app/src/main/res/layout/toolbar_layout.xml" value="0.796875" />
       </map>
     </option>
   </component>

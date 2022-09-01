@@ -1,18 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/container"
     tools:context=".MainActivity">
 
-    <TextView
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edit_Search"
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:hint="@string/search_hint"
+            android:inputType="textLongMessage"
+            android:drawablePadding="10dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textColorHint="@color/dark_grey"
+            android:textColor="@color/dark_grey"
+            android:textSize="13sp"
+            android:drawableStart="@drawable/ic_search"
+            android:background="@drawable/custom_input_field"
+            android:layout_margin="8dp"
+            android:autofillHints="" />
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/search_text"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:background="@drawable/custom_button"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/clapper_lottie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/clapper"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:scrollbars="vertical" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>
