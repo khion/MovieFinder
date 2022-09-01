@@ -20,6 +20,7 @@ import java.util.List;
 public class MovieDataService {
     Context context;
     private static final String OMDB_API_KEY = "f1fa29cc";
+    List<Movie> movie_report = new ArrayList<>();
 
     public MovieDataService(Context context) {
         this.context = context;
@@ -52,12 +53,12 @@ public class MovieDataService {
      */
     public void getMovieData(String data_input, MovieResponse movieResponse) {
         String url = urlBuilder(data_input);
-
+        movie_report.clear();
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        List<Movie> movie_report = new ArrayList<>();
+
                         try {
                             JSONArray search_list = response.getJSONArray("Search");
 

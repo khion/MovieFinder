@@ -66,13 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(List<Movie> movie_report) {
-                if(movie_report != null) {
                     MovieListAdapter arrayAdapter = new MovieListAdapter(MainActivity.this,  movie_report);
                     recyclerView.setAdapter(arrayAdapter);
                     clapper.setVisibility(View.GONE);
-                } else {
-                    clapper.setVisibility(View.VISIBLE);
-                }
             }
         });
     }
